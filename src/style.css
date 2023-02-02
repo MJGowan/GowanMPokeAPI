@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    color:white;
+}
+
 .nameNum{
     width:125px;
     height:24px;
@@ -9,10 +13,31 @@
     border-color: #003A2C;
     border-width:2px;
     background-color: #185946;
+    text-align:center;
 }
 .types{
     width:80px;
     height:24px;
+    border-radius:10px;
+    border-color: #003A2C;
+    border-width:2px;
+    background-color: #185946;
+    text-align: center;
+    margin-left: -15px;
+}
+.location{
+    margin-left:20px;
+    width:180px;
+    height:24px;
+    border-radius:10px;
+    border-color: #003A2C;
+    border-width:2px;
+    background-color: #185946;
+    text-align: center;
+}
+.evolutions{
+    width:400px;
+    height:150px;
     border-radius:10px;
     border-color: #003A2C;
     border-width:2px;
