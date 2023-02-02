@@ -7,40 +7,81 @@ body{
 }
 
 .nameNum{
-    width:125px;
-    height:24px;
+    width:180px;
+    height:30px;
     border-radius:10px;
     border-color: #003A2C;
     border-width:2px;
     background-color: #185946;
     text-align:center;
 }
-.types{
-    width:80px;
-    height:24px;
+.push{
+    margin-left:160px;
+}
+.typeOne{
+    width:100px;
+    height:30px;
     border-radius:10px;
     border-color: #003A2C;
     border-width:2px;
     background-color: #185946;
     text-align: center;
-    margin-left: -15px;
+    margin-left:30px;
+}
+.typeTwo{
+    width:100px;
+    height:30px;
+    border-radius:10px;
+    border-color: #003A2C;
+    border-width:2px;
+    background-color: #185946;
+    text-align: center;
+    margin-left:-25px;
 }
 .location{
-    margin-left:20px;
-    width:180px;
-    height:24px;
+    width:300px;
+    height:30px;
+    border-radius:10px;
+    border-color: #003A2C;
+    border-width:2px;
+    background-color: #185946;
+    text-align: center;
+    margin-left:-465px;
+    margin-top:50px;
+}
+.evolutions{
+    width:500px;
+    height:140px;
     border-radius:10px;
     border-color: #003A2C;
     border-width:2px;
     background-color: #185946;
     text-align: center;
 }
-.evolutions{
-    width:400px;
-    height:150px;
+.btn{
+    width:100px;
+    height:30px;
     border-radius:10px;
     border-color: #003A2C;
     border-width:2px;
     background-color: #185946;
     text-align: center;
+    margin-left: 200px;
+    margin-top:100px;
+}
+.btn:hover {
+    background-color:#154d3c
+}
+.btn:active {
+  background-color: #154d3c;
+  box-shadow: 0 4px #45454563;
+  transform: translateY(3px);
+}
+.inputField{
+    border-radius:5px;
+    width:300px;
+    height:30px;
+    color:rgb(172, 172, 172);
+    margin-left:20px;
+    margin-top:100px;
 }
