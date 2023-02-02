@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nameNum{
+    width:125px;
+    height:24px;
+    border-radius:10px;
+    border-color: #003A2C;
+    border-width:2px;
+    background-color: #185946;
+}
+.types{
+    width:80px;
+    height:24px;
+    border-radius:10px;
+    border-color: #003A2C;
+    border-width:2px;
+    background-color: #185946;
+    text-align: center;
+}
