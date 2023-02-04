@@ -11,79 +11,94 @@
 <body style="background-image:url('./assets/pokedex.jpg') ;background-repeat: no-repeat; background-size: cover;">
     <div class="container">
         <br>
+
         <!--Row One-->
         <div class="flex flex-row">
             <div class="columns-1">
                 <div class="container evolutions">
-                        <p>Evolutions</p>
-                    <div class="columns-2 flex flex-row">
-                        <!--sprite 1?-->
-                        <!--sprite 2?-->
+                    <p class="underline">Evolutions</p>
+                    
+                    <div id="evolutions" class="columns-2 flex flex-row innerSprites">
+                            <image id="evolutionOne"></image>
+                            <image id="evolutionTwo"></image>
+                            <image id="evolutionThree"></image>
                     </div>
                 </div>
             </div>
             <div class="columns-3 push">
                 <div class="container nameNum">
-                    <p id="pokeNameNum">#1 Bulbasaur</p>
+                    <button id="addBtn" class="btn"> <p id="pokeNameNum">#0 Pokemon</p> </button>
                 </div>
                 <br>
                 <div class="container typeOne">
-                    <p id="typeOne">Grass</p>
+                    <p id="typeOne">Type One</p>
                 </div>
                 <br>
                 <div class="container typeTwo">
-                    <p id="typeTwo">Poison</p>
+                    <p id="typeTwo">Type Two</p>
                 </div>
             </div>
             <div class="columns-1">
-            <div class="container location">
-                <p id="location">Cerulean City Area</p>
-            </div>
-            </div>
-            
-        </div>
-    <br>
-
-    <!--Row Two-->
-
-    <div class="flex flex-row">
-        <div class="columns-1">
-            <div class="container evolutions">
-                    <p>Abilities</p>
-                <div class="columns-2 flex flex-row">
-                    <!--scroll abilities-->
+                <div class="container location">
+                    <p id="location">Location</p>
                 </div>
             </div>
-            <br>
-            <div class="container evolutions">
-                <p>Moves</p>
+
+        </div>
+        <br>
+
+        <!--Row Two-->
+        <div class="flex flex-row">
+            <div class="columns-1">
+                <div class="container evolutions">
+                    <p class="underline">Abilities</p>
+                    <br>
+                    <div id="abilities" class="columns-1">
+                        <div id="ab1"></div>
+                        <br>
+                        <div id="ab2"></div>
+                        <br>
+                        <div id="ab3"></div>
+                    </div>
+                </div>
+                <br>
+                <div class="container evolutions">
+                    <p class="underline">Moves</p>
+                    <br>
+                    <div id="moveList" class="columns-1 flex flex-row">
+                        <!--scroll moves-->
+
+                    </div>
+                </div>
+            </div>
+            <div class="columns-2 pokemonSprites">
+                <image id="pokeSprite" class="sprite"></image>
+                <image id="shinySprite" class="sprite shinySprite"></image>
+            </div>
+        </div>
+        <br>
+
+        <!--Row Three-->
+        <div class="flex flex-row">
+            <div class="columns-1">
+                <div class="container evolutions">
+                    <p class="underline">Favorites</p>
+                    <br>
+                    <div id="favHere" class="columns-1 flex flex-row">
+                        <!--scroll favorites-->
+                    </div>
+                </div>
+            </div>
             <div class="columns-2 flex flex-row">
-                <!--scroll moves-->
+                <button id="rndBtn" class="btn rndbtn">Random</button>
+                <input id="input" class="inputField" placeholder="Enter Pokemon or Pokedex Number">
+                <button id="submitBtn" class="btn subbtn">Submit</button>
             </div>
         </div>
-        </div>
-    </div>
-<br>
-    <!--Row Four-->
-
-    <div class="flex flex-row">
-        <div class="columns-1">
-            <div class="container evolutions">
-                    <p>Favorites</p>
-                <div class="columns-2 flex flex-row">
-                    <!--scroll moves-->
-                </div>
-            </div>
-        </div>
-        <div class="columns-2 flex flex-row">
-            <button class="btn">Random</button>
-            <input class="inputField">
-        </div>
-    </div>
 
     </div>
 
-    <script src="./scripts/app.js"></script>
+    <script src="./scripts/app.js" type="module"></script>
 </body>
 
 </html>

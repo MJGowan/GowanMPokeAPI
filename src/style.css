@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+
 body{
     color:white;
+    font-family: Quantico;
 }
 
 .nameNum{
@@ -57,16 +60,27 @@ body{
     border-width:2px;
     background-color: #185946;
     text-align: center;
+    overflow-y: scroll;
 }
-.btn{
+.rndbtn{
     width:100px;
     height:30px;
     border-radius:10px;
+    margin-left: 180px;
+    margin-top:100px;
+}
+.btn{
     border-color: #003A2C;
     border-width:2px;
     background-color: #185946;
     text-align: center;
-    margin-left: 200px;
+}
+.subbtn{
+    width:100px;
+    height:30px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius: 5px;
+    margin-left: -12px;
     margin-top:100px;
 }
 .btn:hover {
@@ -75,7 +89,7 @@ body{
 .btn:active {
   background-color: #154d3c;
   box-shadow: 0 4px #45454563;
-  transform: translateY(3px);
+  transform: translateY(1px);
 }
 .inputField{
     border-radius:5px;
@@ -84,4 +98,15 @@ body{
     color:rgb(172, 172, 172);
     margin-left:20px;
     margin-top:100px;
+}
+.innerSprites{
+    align-items:center;
+    justify-content: center;
+}
+.pokemonSprites{
+    margin-top:115px;
+    margin-left:220px;
+}
+.sprite{
+    width:200px;
 }
