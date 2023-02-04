@@ -55,8 +55,11 @@ async function GetPokemon() {
     //locations
     let areaApi = await fetch("https://pokeapi.co/api/v2/pokemon/" + input.value + "/encounters")
     let areaData = await areaApi.json();
+    console.log(areaData);
     if ((areaData[0] != undefined)) {
-
+        enterLocation.innerHTML = areaData;
+    }else{
+        enterLocation.innerHTML = "N/A";
     }
 
     //evolutions
@@ -112,41 +115,59 @@ async function GetPokemon() {
     }
 
     //moves
-    const moves = data.moves.map(move => move.move.name);
+    // console.log(data.moves)
+    // //data.moves.map(element => element.move.name);
+    // for(let i = 0; i < (data.moves).length; i++){
+    //     moveList[i] = data.moves[i].move.name;
+    // }
+    
+    const getMoves = async () => {
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${data.name}`);
+            const movedata = await response.json();
+            const moves = movedata.moves.map(move => move.move.name);
+            console.log(moves);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    
+    
+        getMoves();
 
 
     //favorites
-    // addBtn.addEventListener("click", function(){
-    //     console.log(data.name);
-    //     saveToLocalStorageByName(data.name);
-    //     let localStorageData = getLocalStorage();
-    //     console.log(localStorageData);
-    //     Favorites();
-    // })
+    addBtn.addEventListener("click", function(){
+        console.log(data.name);
+        saveToLocalStorageByName(data.name);
+        let localStorageData = getLocalStorage();
+        console.log(localStorageData);
+        Favorites();
+    })
     
     
-    // function Favorites(){
-    //     let favorites = getLocalStorage();
+    function Favorites(){
+        let favorites = getLocalStorage();
     
-    //     favorites.map( poke => {
-    //         let p = document.createElement('p');
-    //         p.textContent = poke;
+        favorites.map( poke => {
+            let p = document.createElement('p');
+            p.textContent = poke;
     
-    //         let deleteBtn = document.createElement('button');
-    //         deleteBtn.className = 'btn';
-    //         deleteBtn.textContent = 'Delete';
-    //         deleteBtn.type = 'button';
+            let deleteBtn = document.createElement('button');
+            deleteBtn.className = 'btn';
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.type = 'button';
     
-    //         deleteBtn.addEventListener("click", function(){
-    //             removeFromLocalStorage(poke);
-    //             // p = "";
-    //             // deleteBtn = "";
-    //         })
+            deleteBtn.addEventListener("click", function(){
+                removeFromLocalStorage(poke);
+                p = "";
+                deleteBtn = "";
+            })
     
-    //         favHere.appendChild(p);
-    //         favHere.appendChild(deleteBtn);
-    //     });
-    // }
+            favHere.appendChild(p);
+            favHere.appendChild(deleteBtn);
+        });
+    }
 }
 
 
