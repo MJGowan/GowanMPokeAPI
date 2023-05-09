@@ -11,26 +11,17 @@ function saveToLocalStorageByName(name){
 }
 
 function getLocalStorage(){
-    //get all of the values that are stored in Favorites to local storage
     let localStorageData = localStorage.getItem('Favorites');
-
     if(localStorageData == null){
         return [];
     }
-
     return JSON.parse(localStorageData);
 }
 
 function removeFromLocalStorage(name){
     let favorites = getLocalStorage();
-
-    //find the index of the name in local storage
     let nameIndex = favorites.indexOf(name);
-
-    //remove the name from the array using the splice method
     favorites.splice(nameIndex, 1);
-
-    //save updated array to local storage
     localStorage.setItem('Favorites', JSON.stringify(favorites))
 }
 

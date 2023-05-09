@@ -24,12 +24,15 @@ rndBtn.addEventListener("click", function () {
     RandomPokemon();
 })
 
-submitBtn.addEventListener("click", function(){
+submitBtn.addEventListener("click", function () {
     GetPokemon();
 })
 
-function RandomPokemon(){
+function RandomPokemon() {
     let rnd = parseInt(Math.random() * 649);
+    if(rnd === 0){
+        rnd = parseInt(Math.random() * 649);
+    }
     input.value = rnd;
     GetPokemon();
 }
@@ -57,8 +60,8 @@ async function GetPokemon() {
     let areaData = await areaApi.json();
     console.log(areaData);
     if ((areaData[0] != undefined)) {
-        enterLocation.innerHTML = areaData;
-    }else{
+        enterLocation.innerHTML = areaData[0].location_area.name;
+    } else {
         enterLocation.innerHTML = "N/A";
     }
 
@@ -93,14 +96,14 @@ async function GetPokemon() {
         evolutionTwo.src = "";
         evolutionThree.src = "";
     }
-    
+
     //sprite + shiny
     let sprite = await fetch("https://pokeapi.co/api/v2/pokemon-form/" + data.name)
     let spriteData = await sprite.json();
     pokeSprite.src = spriteData.sprites.front_default;
     shinySprite.src = spriteData.sprites.front_shiny;
 
-    
+
     //abilities
     ab1.innerHTML = data.abilities[0].ability.name;
     if ((data.abilities).length == 1) {
@@ -115,59 +118,51 @@ async function GetPokemon() {
     }
 
     //moves
-    // console.log(data.moves)
-    // //data.moves.map(element => element.move.name);
-    // for(let i = 0; i < (data.moves).length; i++){
-    //     moveList[i] = data.moves[i].move.name;
-    // }
-    
     const getMoves = async () => {
         try {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${data.name}`);
             const movedata = await response.json();
             const moves = movedata.moves.map(move => move.move.name);
-            console.log(moves);
+            moveList.innerHTML = moves;
         } catch (error) {
             console.error(error);
         }
     };
-    
-    
-        getMoves();
-
+    console.log(data.moves)
+    getMoves();
 
     //favorites
-    addBtn.addEventListener("click", function(){
-        console.log(data.name);
-        saveToLocalStorageByName(data.name);
-        let localStorageData = getLocalStorage();
-        console.log(localStorageData);
-        Favorites();
-    })
-    
-    
-    function Favorites(){
-        let favorites = getLocalStorage();
-    
-        favorites.map( poke => {
-            let p = document.createElement('p');
-            p.textContent = poke;
-    
-            let deleteBtn = document.createElement('button');
-            deleteBtn.className = 'btn';
-            deleteBtn.textContent = 'Delete';
-            deleteBtn.type = 'button';
-    
-            deleteBtn.addEventListener("click", function(){
-                removeFromLocalStorage(poke);
-                p = "";
-                deleteBtn = "";
-            })
-    
-            favHere.appendChild(p);
-            favHere.appendChild(deleteBtn);
-        });
-    }
+    // addBtn.addEventListener("click", function () {
+    //     console.log(data.name);
+    //     saveToLocalStorageByName(data.name);
+    //     let localStorageData = getLocalStorage();
+    //     console.log(localStorageData);
+    //     Favorites();
+    // })
+
+
+    // function Favorites() {
+    //     let favorites = getLocalStorage();
+
+    //     favorites.map(poke => {
+    //         let p = document.createElement('p');
+    //         p.textContent = poke;
+
+    //         let deleteBtn = document.createElement('button');
+    //         deleteBtn.className = 'btn';
+    //         deleteBtn.textContent = 'Delete';
+    //         deleteBtn.type = 'button';
+
+    //         deleteBtn.addEventListener("click", function () {
+    //             removeFromLocalStorage(poke);
+    //             p = "";
+    //             deleteBtn = "";
+    //         })
+
+    //         favHere.appendChild(p);
+    //         favHere.appendChild(deleteBtn);
+    //     });
+    // }
 }
 
 
