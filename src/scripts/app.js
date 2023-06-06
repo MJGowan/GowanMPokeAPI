@@ -1,5 +1,3 @@
-import { saveToLocalStorageByName, getLocalStorage, removeFromLocalStorage } from "./localStorage.js";
-
 let pokeNameNum = document.getElementById("pokeNameNum");
 let typeOne = document.getElementById("typeOne");
 let typeTwo = document.getElementById("typeTwo");
@@ -15,8 +13,6 @@ let input = document.getElementById("input");
 let submitBtn = document.getElementById("submitBtn");
 let pokeSprite = document.getElementById("pokeSprite");
 let shinySprite = document.getElementById("shinySprite");
-// let addBtn = document.getElementById("addBtn");
-// let favHere = document.getElementById("favHere");
 
 let pokeApi;
 
