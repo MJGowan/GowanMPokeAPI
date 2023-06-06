@@ -52,7 +52,8 @@ body{
     margin-left:-465px;
     margin-top:50px;
 }
-.evolutions{
+
+.infoBoxes{
     width:500px;
     height:140px;
     border-radius:10px;
@@ -61,7 +62,14 @@ body{
     background-color: #185946;
     text-align: center;
     overflow-y: scroll;
+    overflow-x:visible;
+    margin-left: 2%
 }
+
+.movesBox{
+    height: 200px;
+}
+
 .rndbtn{
     width:100px;
     height:30px;
@@ -111,5 +119,6 @@ body{
     width:200px;
 }
 .inputRow{
-    margin-left: 35%
+    margin-left: 35%;
+    margin-top: -7%;
 }
