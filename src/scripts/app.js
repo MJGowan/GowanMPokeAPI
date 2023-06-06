@@ -129,38 +129,6 @@ async function GetPokemon() {
     };
     getMoves();
 
-    //favorites
-    // addBtn.addEventListener("click", function () {
-    //     console.log(data.name);
-    //     saveToLocalStorageByName(data.name);
-    //     let localStorageData = getLocalStorage();
-    //     console.log(localStorageData);
-    //     Favorites();
-    // })
-
-
-    // function Favorites() {
-    //     let favorites = getLocalStorage();
-
-    //     favorites.map(poke => {
-    //         let p = document.createElement('p');
-    //         p.textContent = poke;
-
-    //         let deleteBtn = document.createElement('button');
-    //         deleteBtn.className = 'btn';
-    //         deleteBtn.textContent = 'Delete';
-    //         deleteBtn.type = 'button';
-
-    //         deleteBtn.addEventListener("click", function () {
-    //             removeFromLocalStorage(poke);
-    //             p = "";
-    //             deleteBtn = "";
-    //         })
-
-    //         favHere.appendChild(p);
-    //         favHere.appendChild(deleteBtn);
-    //     });
-    // }
 }
 
 
