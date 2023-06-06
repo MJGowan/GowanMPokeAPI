@@ -40,7 +40,6 @@ function RandomPokemon() {
 async function GetPokemon() {
     pokeApi = await fetch("https://pokeapi.co/api/v2/pokemon/" + input.value);
     let data = await pokeApi.json();
-    console.log(data);
 
     //# and name
     pokeNameNum.innerHTML = "#" + data.id + " " + data.name;
@@ -55,12 +54,12 @@ async function GetPokemon() {
         typeTwo.innerHTML = "N/A"
     }
 
-    //locations
+    //location
     let areaApi = await fetch("https://pokeapi.co/api/v2/pokemon/" + input.value + "/encounters")
     let areaData = await areaApi.json();
-    console.log(areaData);
     if ((areaData[0] != undefined)) {
-        enterLocation.innerHTML = areaData[0].location_area.name;
+        let location = areaData[0].location_area.name.split('-').join(' ');
+        enterLocation.innerHTML = location;
     } else {
         enterLocation.innerHTML = "N/A";
     }
@@ -123,12 +122,11 @@ async function GetPokemon() {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${data.name}`);
             const movedata = await response.json();
             const moves = movedata.moves.map(move => move.move.name);
-            moveList.innerHTML = moves;
+            moveList.innerHTML = moves.join(', ');
         } catch (error) {
             console.error(error);
         }
     };
-    console.log(data.moves)
     getMoves();
 
     //favorites
